@@ -8,16 +8,16 @@ sudo pip3 install requests
 sudo pip3 install time
 sudo pip3 install datetime
 
-#set interface on line 6
-#change line 71/73 to use PCAP-File instead of sniffer-mode
-#run the TOR-Sniffer
-sudo python3 TORsniffer.py
+#run the TOR-Sniffer with interface -i:
+sudo python3 TORsniffer.py -i enp0s3
+#run the TOR-Sniffer with PCAP-File:
+sudo python3 TORsniffer.py -f sniffFile.pcap
 
 # example:
 
-sudo python3 TORsniffer.py 
+sudo python3 TORsniffer.py -i enp0s3
 ***************************************
-* TOR-Sniffer V.1.2 by Reto Schaedler *
+* TOR-Sniffer V.1.3 by Reto Schaedler *
 ***************************************
 TOR-IP-File age in seconds: 1222
 TOR-IP-File is up to date.
