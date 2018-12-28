@@ -1,2 +1,0 @@
-# TORsniffer
-TOR-Browser Sniffer
