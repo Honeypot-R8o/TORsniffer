@@ -68,7 +68,6 @@ print("***************************************")
 checkTorFile('TOR_IP_LIST.txt')
 iplist=loadFile('TOR_IP_LIST.txt')
 print("Start sniffer...")
-startSniffer(iplist)
 sniff(filter='tcp and tcp[tcpflags]==tcp-syn',iface=interface, store=0, prn=startSniffer)
 # Read pcap-file instead of sniff:
 #sniff(filter='tcp and tcp[tcpflags]==tcp-syn',offline='file.pcap', store=0, prn=startSniffer)
