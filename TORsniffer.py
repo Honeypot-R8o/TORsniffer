@@ -2,8 +2,8 @@ from scapy.all import *
 import requests
 import time, os, stat
 import datetime
+import optparse
 
-interface='enp0s3'
 
 def file_age_in_seconds(filename):
 	return time.time() - os.stat(filename)[stat.ST_MTIME]
@@ -62,12 +62,23 @@ def startSniffer(pkt):
 
 
 
+parser = optparse.OptionParser()
+parser.add_option('-i', '--interface',
+    action="store", dest="interface",
+    help="query string", default="enp0s3")
+parser.add_option('-f', '--file',
+    action="store", dest="pcapfile",
+    help="query string", default="")
+options, args = parser.parse_args()
+
 print("***************************************")
-print("* TOR-Sniffer V.1.2 by Reto Schaedler *")
+print("* TOR-Sniffer V.1.3 by Reto Schaedler *")
 print("***************************************")
 checkTorFile('TOR_IP_LIST.txt')
 iplist=loadFile('TOR_IP_LIST.txt')
-print("Start sniffer...")
-sniff(filter='tcp and tcp[tcpflags]==tcp-syn',iface=interface, store=0, prn=startSniffer)
-# Read pcap-file instead of sniff:
-#sniff(filter='tcp and tcp[tcpflags]==tcp-syn',offline='file.pcap', store=0, prn=startSniffer)
+if options.pcapfile=="":
+	print("Start sniffer...")
+	sniff(filter='tcp and tcp[tcpflags]==tcp-syn',iface=options.interface, store=0, prn=startSniffer)
+else:
+	print("Read file...")
+	sniff(filter='tcp and tcp[tcpflags]==tcp-syn',offline=options.pcapfile, store=0, prn=startSniffer)
