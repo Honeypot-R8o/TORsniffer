@@ -65,10 +65,10 @@ def startSniffer(pkt):
 parser = optparse.OptionParser()
 parser.add_option('-i', '--interface',
     action="store", dest="interface",
-    help="query string", default="enp0s3")
+    help="string", default="enp0s3")
 parser.add_option('-f', '--file',
     action="store", dest="pcapfile",
-    help="query string", default="")
+    help="string", default="")
 options, args = parser.parse_args()
 
 print("***************************************")
