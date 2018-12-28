@@ -1,6 +1,7 @@
 # TORsniffer
-# Install on Ubuntu 18.04:
-sudo apt update
+# Installation on Ubuntu 18.04:
+sudo apt-get update
+sudo apt-get install python3
 sudo apt install python3-pip
 sudo pip3 install scapy
 sudo pip3 install requests
@@ -8,12 +9,13 @@ sudo pip3 install time
 sudo pip3 install datetime
 
 #set interface on line 6
+#change line 71/73 to use PCAP-File instead of sniffer-mode
 #run the TOR-Sniffer
 sudo python3 TORsniffer.py
 
-# e.g.:
+# example:
 
-python3 TORsniffer.py 
+sudo python3 TORsniffer.py 
 ***************************************
 * TOR-Sniffer V.1.2 by Reto Schaedler *
 ***************************************
