@@ -13,6 +13,7 @@ sudo python3 TORsniffer.py -i enp0s3
 #run the TOR-Sniffer with PCAP-File:
 sudo python3 TORsniffer.py -f sniffFile.pcap
 
+# use a managed switch with port-mirroring to sniff the internet traffic
 # example:
 
 sudo python3 TORsniffer.py -i enp0s3
