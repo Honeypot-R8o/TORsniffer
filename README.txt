@@ -1,3 +1,5 @@
+# This is an old version, please use my new one at [https://github.com/RetoSchaedler](https://github.com/RetoSchaedler)
+
 # TORsniffer
 # Installation on Ubuntu 18.04:
 sudo apt-get update
